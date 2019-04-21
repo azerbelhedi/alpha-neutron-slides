@@ -9,10 +9,14 @@ class NeutronViewer extends Component {
           {
             type : "course" ,
             title : "introduction to web dev" ,
+            subTitle : "what is the internet" ,
             content : [
               {
                 type : "paragraph" ,
-                content : "web dev is a very good because and it is also yes trust me ! please ok nice thanks bye" 
+                content : `web dev is a very good because and it is also yes trust me ! please ok nice thanks bye
+                ezza za eza e zae za e az zaezae zgfdfg gfdg fd fdgfd gfd g fd g
+                fdg fdg fd g fg f dg fd gzezakjk jkj lkjklj lk lj kj jkl kjk jkj j jklj ljl 
+                lmklkml mlk kmlk lk lkmk mklm kmk` 
               } ,
               {
                 type : "picture" ,
@@ -40,9 +44,17 @@ class NeutronViewer extends Component {
   render() {
     return (
       <div className="neutron-viewer">
-        {
-          this.decomposer(this.state.slides[0])
-        }
+        <div className="left">
+        <i class="left-arrow"></i>
+        </div>
+        <div className="content">
+          {
+            this.decomposer(this.state.slides[0])
+          }
+        </div>
+        <div className="right">
+          <i class="right-arrow"></i>
+        </div>
       </div>
     );
   }

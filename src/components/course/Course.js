@@ -12,17 +12,29 @@ class Course extends Component{
                 color : "rgb(66, 182, 244)" ,
                 fontWeight : "bolder" ,
                 fontFamily : "Arial Black" ,
-                textShadow : "1px 1px 2px gray"
+                textShadow : "1px 1px 2px gray" ,
+                marginTop : "5px" ,
+                marginBottom :  "2px"
+            } ,
+            subTitleStyle : {
+                fontSize : "1.5vw" ,
+                width : "max-content" ,
+                marginLeft : "auto" ,
+                marginRight : "auto" ,
+                color : "rgb(89, 197, 255)" ,
+                fontWeight : "lighter" ,
+                fontFamily : "Arial Black" ,
+                textShadow : "1px 1px 2px gray" ,
+                marginTop : "5px"
             } ,
             paragraphStyle : {
                 fontSize : "1.2vw" ,
-                width : "max-content" ,
                 marginLeft : "0px" ,
                 marginRight : "0px" ,
                 color : "grey" ,
                 fontWeight : "lighter" ,
-                fontFamily : "Arial Black" 
-            }
+                fontFamily : "Arial Black" ,
+            } 
         }
     }
 
@@ -45,6 +57,7 @@ class Course extends Component{
         return(
             <div className = "course">
                 <h1 className = "title" style = {this.state.titleStyle}> {this.props.data.title} </h1>
+                <h3 className = "sub-title" style = {this.state.subTitleStyle}> {this.props.data.subTitle} </h3>
                 {
                     this.props.data.content.map( elementData => {
                         return(this.dataToTag(elementData))

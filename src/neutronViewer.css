@@ -1,16 +1,52 @@
 .neutron-viewer{
     background-color :white;
     height :500px;
-    width :70%;
+    width :70% ;
     margin-left :auto;
     margin-right :auto;
     padding :15px;
     padding-top :2px ;
     margin-top :40px;
-    padding-left :100px ;
     box-shadow: 0.5px 0.5px 20px rgb(126, 126, 126) ;
+    display: flex ;
 }
 
+.neutron-viewer .content{
+    width :96%;
+    padding-left :50px;
+    padding-right: 50px ;
+}
+
+.neutron-viewer .left , .right{
+    width :2%;
+    /*background-color: red ;*/
+}
+
+
+i{
+    border: solid rgb(66, 182, 244);
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    top :50%;
+}
+
+i:hover{
+    cursor: pointer;
+}
+
+.right-arrow{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left-arrow{
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+  
 body{
     background-color: whitesmoke ;
 }
