@@ -47,9 +47,18 @@ class Course extends Component{
             )
         }
         else if(data.type === "picture"){
-            return(
-                <img src = {data.url} alt = {data.url} />
-            )
+            if(data.position === "center"){
+                return(
+                    <center>
+                        <img src = {data.url} alt = {data.url} />
+                    </center>
+                )
+            }
+            else{
+                return(
+                    <img src = {data.url} alt = {data.url} />
+                )
+            }
         }
     }
 
