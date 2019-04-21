@@ -52,7 +52,7 @@ class NeutronViewer extends Component {
   decomposer(slide){
     if(slide.type === "course"){
       return(
-        <Course data = {slide}/>
+        <Course data = {slide} edit = {this.props.data.edit} />
       )
     }
     else{

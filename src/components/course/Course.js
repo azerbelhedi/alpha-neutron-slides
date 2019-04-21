@@ -34,14 +34,20 @@ class Course extends Component{
                 color : "grey" ,
                 fontWeight : "lighter" ,
                 fontFamily : "Arial Black" ,
-            } 
+            }  ,
+            classes : {
+                paragraph : (this.props.edit === 1 ? "paragraph" : "") ,
+                title : (this.props.edit === 1 ? "title" : "") ,
+                subTitle : (this.props.edit === 1 ? "sub-title" : "") ,
+                img : (this.props.edit === 1 ? "img" : "") ,
+            }
         }
     }
 
     dataToTag(data){
         if(data.type === "paragraph"){
             return(
-                <p className="paragraph" style = {this.state.paragraphStyle}>
+                <p className = {this.state.classes.paragraph} style = {this.state.paragraphStyle}>
                     {data.content}
                 </p>
             )
@@ -50,13 +56,13 @@ class Course extends Component{
             if(data.position === "center"){
                 return(
                     <center>
-                        <img src = {data.url} alt = {data.url} />
+                        <img className = {this.state.classes.img} src = {data.url} alt = {data.url} />
                     </center>
                 )
             }
             else{
                 return(
-                    <img src = {data.url} alt = {data.url} />
+                    <img className = {this.state.classes.img} src = {data.url} alt = {data.url} />
                 )
             }
         }
@@ -65,8 +71,8 @@ class Course extends Component{
     render(){
         return(
             <div className = "course">
-                <h1 className = "title" style = {this.state.titleStyle}> {this.props.data.title} </h1>
-                <h3 className = "sub-title" style = {this.state.subTitleStyle}> {this.props.data.subTitle} </h3>
+                <h1 className = {this.state.classes.title} style = {this.state.titleStyle}> {this.props.data.title} </h1>
+                <h3 className = {this.state.classes.subTitle} style = {this.state.subTitleStyle}> {this.props.data.subTitle} </h3>
                 {
                     this.props.data.content.map( elementData => {
                         return(this.dataToTag(elementData))

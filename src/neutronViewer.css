@@ -50,3 +50,8 @@ i:hover{
 body{
     background-color: whitesmoke ;
 }
+
+.title:hover , .sub-title:hover , .paragraph:hover , .img:hover{
+    outline :2px solid blue ;
+    cursor: pointer;
+}
