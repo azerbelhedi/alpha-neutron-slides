@@ -1,4 +1,14 @@
 import React , { Component } from 'react' ;
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco , atelierEstuaryDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+const CodeComponent = () => {
+    const codeString = '(num) => num + 1';
+    return (<div>
+        <SyntaxHighlighter language='javascript' style={docco}>{codeString}</SyntaxHighlighter>
+        <SyntaxHighlighter language='javascript' style={atelierEstuaryDark}>{codeString}</SyntaxHighlighter>
+    </div>);  
+}
 
 class Course extends Component{
     constructor(props){
@@ -9,7 +19,7 @@ class Course extends Component{
                 width : "max-content" ,
                 marginLeft : "auto" ,
                 marginRight : "auto" ,
-                color : "rgb(66, 182, 244)" ,
+                color : "rgb(79, 239, 132)" ,
                 fontWeight : "bolder" ,
                 fontFamily : "Arial Black" ,
                 textShadow : "1px 1px 2px gray" ,
@@ -21,7 +31,7 @@ class Course extends Component{
                 width : "max-content" ,
                 marginLeft : "auto" ,
                 marginRight : "auto" ,
-                color : "rgb(89, 197, 255)" ,
+                color : "rgb(79, 239, 132)" ,
                 fontWeight : "lighter" ,
                 fontFamily : "Arial Black" ,
                 textShadow : "1px 1px 2px gray" ,
@@ -35,6 +45,10 @@ class Course extends Component{
                 fontWeight : "lighter" ,
                 fontFamily : "Arial Black" ,
             }  ,
+            pictureStyle : {
+                width :"50%",
+                height :"50%"
+            } ,
             classes : {
                 paragraph : (this.props.edit === 1 ? "paragraph" : "") ,
                 title : (this.props.edit === 1 ? "title" : "") ,
@@ -56,15 +70,32 @@ class Course extends Component{
             if(data.position === "center"){
                 return(
                     <center>
-                        <img className = {this.state.classes.img} src = {data.url} alt = {data.url} />
+                        <img style = {this.state.pictureStyle} className = {this.state.classes.img} src = {data.url} alt = {data.url} />
                     </center>
                 )
             }
             else{
                 return(
-                    <img className = {this.state.classes.img} src = {data.url} alt = {data.url} />
+                    <img style = {this.state.pictureStyle} className = {this.state.classes.img} src = {data.url} alt = {data.url} />
                 )
             }
+        }
+        else if(data.type === "scrimba"){
+            return(
+                <center>
+                    <iframe src = {data.url} frameborder="0" height = "380px" width = "700px"></iframe>
+                </center>
+            )
+        }
+        else if(data.type === "code"){
+            return <CodeComponent/>
+        }
+        else{
+            return(
+                <center>
+                    {data.sourceCode}
+                </center>
+            ) ;
         }
     }
 
