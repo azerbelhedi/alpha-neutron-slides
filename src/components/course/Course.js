@@ -3,7 +3,12 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco , atelierEstuaryDark} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const CodeComponent = () => {
-    const codeString = '(num) => num + 1';
+    const codeString = `
+    (num) => num + 1 ;
+    console.log("hello world !!") ;
+    array.map(x => {
+        console.log(x.data) ;
+    })`;
     return (<div>
         <SyntaxHighlighter language='javascript' style={docco}>{codeString}</SyntaxHighlighter>
         <SyntaxHighlighter language='javascript' style={atelierEstuaryDark}>{codeString}</SyntaxHighlighter>
