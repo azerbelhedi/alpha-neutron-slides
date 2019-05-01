@@ -5,7 +5,7 @@ class NeutronViewer extends Component {
   constructor(props){
     super(props) ;
     this.state = {
-        slideIndex : 0 ,
+        slideIndex : 4 ,
         slides : [
           {
             type : "course" ,
@@ -71,7 +71,7 @@ class NeutronViewer extends Component {
               {
                 type : "video" ,
                 position : "center" ,
-                sourceCode : <iframe width="560" height="315" src="https://www.youtube.com/embed/Rp2BYE0elcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                sourceCode : <iframe width="100%" height="400px" src="https://www.youtube.com/embed/Rp2BYE0elcA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
               }
             ]
           } ,

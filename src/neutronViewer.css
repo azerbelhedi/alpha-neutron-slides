@@ -1,7 +1,7 @@
 .neutron-viewer{
     background-color :white;
-    height :35vw;
-    width :70% ;
+    height :42vw;
+    width :80% ;
     margin-left :auto;
     margin-right :auto;
     padding :15px;
@@ -13,8 +13,8 @@
 
 .neutron-viewer .content{
     width :96%;
-    padding-left :10%;
-    padding-right: 10% ;
+    padding-left :5%;
+    padding-right: 5% ;
 }
 
 .neutron-viewer .left , .right{

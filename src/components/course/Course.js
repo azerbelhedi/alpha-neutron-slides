@@ -88,7 +88,7 @@ class Course extends Component{
         else if(data.type === "scrimba"){
             return(
                 <center>
-                    <iframe src = {data.url} frameborder="0" height = "380px" width = "700px"></iframe>
+                    <iframe src = {data.url} frameborder="0" height = "460px" width = "100%"></iframe>
                 </center>
             )
         }
